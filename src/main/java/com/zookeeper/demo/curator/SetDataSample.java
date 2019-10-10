@@ -28,10 +28,7 @@ public class SetDataSample {
         Stat stat = new Stat();
         new String(client.getData().storingStatIn(stat).forPath(path));
         System.out.println("Success set node for:"+path+", new version:"+client.setData().withVersion(stat.getVersion()).forPath(path).getVersion());
-
         client.setData().withVersion(stat.getVersion()).forPath(path);
-
-
         System.out.println();
     }
 }
